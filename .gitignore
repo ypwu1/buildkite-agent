@@ -1,1 +1,4 @@
-.idea
+*
+!Dockerfile
+!.dockerignore
+!README.md
