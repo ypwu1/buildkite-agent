@@ -2,11 +2,8 @@ FROM buildkite/agent:alpine
 
 ENV PYTHONUNBUFFERED=1
 
-RUN apk -v --update add \
-        python3 \
-        make &&\
-    echo "**** install Python ****" && \
-    apk add --no-cache python3 && \
+RUN echo "**** install Python ****" && \
+    apk add --no-cache --update python3 make && \
     if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi && \
     echo "**** install pip ****" && \
     python3 -m ensurepip && \
