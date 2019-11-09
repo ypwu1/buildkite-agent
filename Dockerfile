@@ -39,7 +39,7 @@ RUN echo "**** install Python ****" && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --no-cache --upgrade pip setuptools wheel && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    pip install --upgrade awscli awsebcli s3cmd \
+    pip install --upgrade awscli awsebcli s3cmd aws-sam-translator aws-sam-cli \
     && rm -rf /var/cache/apk/*
 
 ENV BUILDKITE_AGENT_CONFIG=/buildkite/buildkite-agent.cfg
